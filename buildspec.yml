@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  post_build:
+    commands:
+      - mvn package
+      - mv target/EMPLOYEE.war EMPLOYEE.war
+artifacts:
+  files:
+    - EMPLOYEE.war
+    - .ebextensions/**/*
